@@ -1,0 +1,59 @@
+Almost like C
+
+No global variables
+
+supported unary operators - !
+supported binary operators + - * / <= < > >= == !=
+No explicit cast operation
+Implicit casts between float to int and int to float. Casts to left operand ie int + float, float is cast to int before operation. Casts on assign
+! only applies to boolean
+unary - only applies to int and float
+Binary operators only apply to same types except float and int which will be implicitly casted
+Curly braces on if/while/do/for are not optional
+i++ ++i i+=1 etc not supported
+no % operation
+function prototypes must be declared. variable name of parameter required but not used
+
+void
+	function return only
+bool
+	true/false
+	not 1 or 0 like c
+float
+	primitive floats are int that have '.'
+	auto casts to int when needed
+int
+	auto casts to float when needed
+char
+	'c'
+string
+	"string"
+arrays
+	passed by reference. Everything else passed by value
+	no array return type by functions
+	no multidimensional array
+	no array reasignment
+	must have a size at declaration
+		int x[10];
+		int x[] = {1,2,3,4};	
+		in case of both, semantic might be thrown in case of int x[1+2] but not in int x[size1+size2]
+		supports variable array size, int x[size]
+const
+	const int, cannot reassign after declaration
+	const int[], cannot reassign contents after declaration
+if(expression)
+	can have else{}
+	expression must be a boolean expression
+while(expression)
+	expression must be a boolean expression
+do{}while(expression);
+	expression must be a boolean expression
+for(assign;expression;assign)
+	expression must be a boolean expression
+	assign are assignment statements ie i=0
+	no declarations at assign
+	single statements only
+Nested declaration
+	inner declarations hide outer declarations
+	outer declarations are accessible from inner scopes
+	

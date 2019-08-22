@@ -1,0 +1,67 @@
+Three Address Code (.tac file)
+var1 = var2
+	simple assign
+var1 = var2 binary_op var3
+	binary_op - + * / < <= > >= == != || &&
+var1 = unary_op var2
+	unary_op ! -
+var1 = FLOAT_TO_INT var2
+	generated because of autocast float to int
+var1 = INT_TO_FLOAT var2
+	generated because of autocast int to float
+v1 SETSIZE v2 
+	- set size of array v1 to v2, allocates space in the array object
+var1 = var2[var3]
+	- array read
+var1[var2] = var3
+	- array write
+Label:
+	-GOTO locations
+GOTO Label
+	change ip to location of label
+IF_FALSE var1 GOTO Label
+	if var 1 is false change ip to location of label
+IF_TRUE var1 GOTO Label
+	if var 1 is true change ip to location of label
+PUSHPARAM var
+	-push va4 to stack
+POPPARAM num
+	-pop num entries from stack
+v1 = POPPARAM
+	-pop top of stack to v1
+CALL function_name
+	- push ip+1 to the stack. change ip to function_name location
+BEGIN_FUNC
+	- save previous frame pointer to stack. set current frame pointer to top of stack
+	- allocate space on stack for local variables
+END_FUNC
+	-same as RETURN
+ENTER_SCOPE scope_name
+	-enter scope_name in symbol table
+EXIT_SCOPE	
+	-return to previous scope
+RETURN
+	deallocate local variables in stack. 
+	load previous fram pointer from stack
+        pop ip from stack
+	change ip to popped ip
+RETURN var1
+	deallocate local variables in stack. 
+	load previous fram pointer from stack
+        pop ip from stack
+	push var1  to stack
+	change ip to popped ip
+
+Symbol table (.symb file) tree structure of tables
+		global table
+			| - function names and locations in code
+			| - label names locations in code
+			function 
+				| - local variable names, types, locations on stack
+				| - scopes
+					| - local variables in this scope, types, locations on stack
+					| - scopes can nest 
+
+		sourceMapper
+			- mapping from TAC to original source
+			- no entries when code is optimized

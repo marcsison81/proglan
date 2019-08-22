@@ -1,0 +1,19 @@
+
+Optimization
+	See dragonbook for reference
+	unreachable code optimization
+		Create a control flow graph of basic blocks from the code, remove unreachable blocks from main
+			a basic block is a block of code where the entire block always executes sequentially in its entirety
+	local common subexpression optimization (in a basic block)
+		create directed acyclic graphs from a basic block
+		When an expression can have multiple targets (multiple variables are equivalent), prioritize non-temporary variables
+			copy to other non-temporary variables -> local dead code optimization
+			assume that all temporary variables are not live on block exit
+		rules for arrays when dumping the DAG back to code
+			position of array reads to same array cannot cross array writes to same array 
+			position of array writes to same array  cannot cross array writes to same array 
+			position of array reads to same array may pass array writes to same array 
+	local dead code optimization	
+		effect of local common subexpression optimization when we choose which variables are live on exit
+			
+		

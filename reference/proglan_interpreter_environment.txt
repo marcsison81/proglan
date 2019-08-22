@@ -1,0 +1,54 @@
+Interpreter notes
+	All variables/parameters/return addresses are implemented on a stack. No simulated registers becuase I'm lazy.
+	Uses java objects so we don't have to bother with different sizes. Because of this, each variable takes 1 entry on the stack. This includes array types
+	2 available "registers", not used for variable storage
+		ip - current line (0 index) of the three address code file (.tac)
+		ebp - frame pointer (0 index). Also stored on the stack for recursion. All variables/parameter locations are offsets from ebp to find their location on the stack. Variable/parameter information of all functions/scope are in the .symb file
+Things that happen on a function call
+	push parameters on the stack
+	push ip+1 to the stack	(return address)
+	push ebp to the stack
+	move current stack pointer to ebp
+	allocate space on stack for local variables
+Things that happen on a function exit (including returns)
+	deallocate local variables on the stack
+	pop ebp from the stack
+	pop return address from the stack
+	if there is a return value push to the stack before going to popped return address
+Things that happen after the function call
+	pop return value
+	pop parameters
+Sample stack
+		main
+			call func1(x1,y1,z1) - function has 3 local variables
+				call int func2(x2,y2,z2) - function has 3 local variables
+		
+	Stack just before exiting func2:
+		func2 local var
+		func2 local var
+		func2 local var
+		ebp of func1
+		func2 return address
+		parameter z2
+		parameter y2
+		parameter x2
+		func1 local var
+		func1 local var
+		func1 local var
+		ebp of main func
+		func1 return address
+		parameter z1
+		parameter y1
+	0------>parameter x1
+
+Built in functions
+readString
+readInt
+readFloat
+readChar
+readBool
+printString
+printInt
+printFloat
+printChar
+printBool

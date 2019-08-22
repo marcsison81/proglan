@@ -1,0 +1,68 @@
+{
+  "globalSymbolTable": {
+    "identifierHashMap": {
+      "readBool": {
+        "name": "readFloat",
+        "type": "FUNCTION",
+        "returnType": "FLOAT",
+        "location": -1
+      },
+      "printInt": {
+        "name": "printInt",
+        "type": "FUNCTION",
+        "returnType": "VOID",
+        "location": -1
+      },
+      "readFloat": {
+        "name": "readBool",
+        "type": "FUNCTION",
+        "returnType": "BOOL",
+        "location": -1
+      },
+      "readString": {
+        "name": "readString",
+        "type": "FUNCTION",
+        "returnType": "STRING",
+        "location": -1
+      },
+      "printBool": {
+        "name": "printBool",
+        "type": "FUNCTION",
+        "returnType": "VOID",
+        "location": -1
+      },
+      "printString": {
+        "name": "printString",
+        "type": "FUNCTION",
+        "returnType": "VOID",
+        "location": -1
+      },
+      "printFloat": {
+        "name": "printFloat",
+        "type": "FUNCTION",
+        "returnType": "VOID",
+        "location": -1
+      },
+      "readInt": {
+        "name": "readInt",
+        "type": "FUNCTION",
+        "returnType": "INT",
+        "location": -1
+      },
+      "readChar": {
+        "name": "readChar",
+        "type": "FUNCTION",
+        "returnType": "CHAR",
+        "location": -1
+      },
+      "printChar": {
+        "name": "printChar",
+        "type": "FUNCTION",
+        "returnType": "VOID",
+        "location": -1
+      }
+    },
+    "childTables": {}
+  },
+  "sourceMapper": []
+}

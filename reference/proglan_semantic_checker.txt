@@ -1,0 +1,34 @@
+All semantic checks supports nested statements
+
+Undeclared variables
+Uninitialized variables
+	-only partially supported as we cannot be sure if initializations inside loops or control statements execute
+variable used like a function
+non array variable used like an array
+array variable used like a non array
+non integer index of array
+array size declaration and initialization list size mismatch
+	-only partially supported as we support dynamic array size allocation
+negatic array initialization
+	-only partially supported as we support dynamic array size allocation
+array bounds check
+	-only partially supported as we support dynamic array size allocation
+type mismatch
+function parameter mismatch
+invalid casts
+invalid types for binary operators
+invalid types for unary operators
+constant reassignment
+function name reassignment
+declaration of void type variable
+variable redeclaration in same scope
+global variables not allowed
+declaring a variable with the same name as a function
+not declaring array size on declaration
+expression statements not allowed
+return statement type mismatch
+no return statement
+function prototype not declared
+function already defined
+function prototype and definition mismatch
+function prototype exist but no definition found
